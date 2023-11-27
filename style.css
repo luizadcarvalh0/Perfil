@@ -86,11 +86,12 @@ profile p{
     z-index: 1;
     transform: translateY(-50%);                      /* move o elemento patra cima ou para baixo */
     top: 50%;
+
+    animation: slide-back .2s;
 }
 
 .light #switch button{
-    right: 0;
-    left: initial;
+    animation: slide-in 0.2s forwards;
 }
 
 #switch span{
@@ -104,7 +105,9 @@ profile p{
     border-radius: 9999px;
 }
 
-
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
 
 /* links */
 
@@ -189,4 +192,24 @@ footer a{
 
 footer a p{
     padding: 5px 2;
+}
+
+/*animation*/
+
+@keyframes slide-in{
+    from{
+        left: 0;
+    }
+    to{
+        left:50%;
+    }
+}
+
+@keyframes slide-back{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
 }
